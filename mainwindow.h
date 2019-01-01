@@ -51,6 +51,7 @@ private:
     QComboBox *comboBox;
     QAction *action_mouse;
 
+
 //    MyThread thread;
 
 

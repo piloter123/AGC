@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+ #include "mainwindow.h"
 #include "form.h"
 #include "ui_mainwindow.h"
 #include "showwidget.h"
@@ -29,7 +29,10 @@ MainWindow::MainWindow(QWidget *parent) :
     process=new QProcess(this);
     qgc=new QProcess(this);
     newAction=new QAction(tr("&New"),this);
-
+    // 设置背景颜色
+    QPalette palette(this->palette());
+    palette.setColor(QPalette::Background,Qt::gray);
+    this->setPalette(palette);
     ui->menu->addAction(newAction);
 
     connect(newAction,SIGNAL(triggered()),this,SLOT(newFile()));
@@ -91,6 +94,8 @@ void MainWindow::on_actionButton2_clicked()
 void MainWindow::on_actiontakeOff_clicked()
 {
     QDesktopServices::openUrl(QUrl(QLatin1String("https://www.baidu.com")));
+    QDesktopServices::openUrl(QUrl(QLatin1String("https://www.google.com")));
+    QDesktopServices::openUrl(QUrl(QLatin1String("https://www.sina.com.cn")));
 }
 void MainWindow::hideSensor()
 {
